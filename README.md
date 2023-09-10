@@ -51,3 +51,5 @@ Types of Fart:
 Loud fart: Affects everyone excluding those who CANNOT hear.  
 Stinky fart: Affects everyone excluding those who CANNOT smell.  
 Rainbow fart: Affects EVERYONE but REDUCES their anger.  
+  
+NOTICE: Fart attributes will only reset if player has no more fart!
