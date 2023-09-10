@@ -1,6 +1,10 @@
 # FartTheWayUp
 
 
+Download:  
+Download the FartTheWayUp.zip file to play. Enjoy!
+  
+  
 Game Background:  
   
 In this game, there is an elevator with no upper limit on floor levels that keeps moving upward. Player is one of the passengers in this elevator and player needs to eat and fart as the elevator moves up. Of course, other passengers, the NPCs, in this elevator will be mad at player farting. Player's goal is to reach high floor level while eating and farting in the elevator, and try not to let NPCs get super angry before they get off the elevator.  
