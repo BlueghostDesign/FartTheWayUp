@@ -2,6 +2,7 @@
 
 
 Download:  
+  
 For Windows users, download the FartTheWayUp.zip file to play.  
 For Mac users, download the FartTheWayUpMac.zip file to play.  
 Enjoy!
