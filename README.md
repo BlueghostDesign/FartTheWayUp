@@ -22,7 +22,7 @@ Rules:
   
 Player has to eat food in the food bar located on the right hand side of the screen. If the food bar is full(more than 6 foods are generated), GAME OVER!  
 After player eats food, player gain a certain amount of fart and cause the fart to have different attributes(stinky and/or loud). Player has to fart to reduce the amount of fart. If the player is full of fart, GAME OVER!  
-As player farts, other passengers on the elevator(NPCs) will get mad. However, some of them are wearing a headphone so they CANNOT hear loud farts, and some of them are wearing a mask so they CANNOT smell stinky farts! If the anger of any of the NPCs are full(they are really angry), GAME OVER!  
+As player farts, other passengers on the elevator(NPCs) will get mad. However, some of them are wearing a headphone so they CANNOT hear loud farts, and some of them are wearing a mask so they CANNOT smell stinky farts! When the elevator stops, NPCs will not gain anger. If the anger of any of the NPCs are full(they are really angry), GAME OVER!  
 The final score will be the final floor level of the elevator!  
 
 
