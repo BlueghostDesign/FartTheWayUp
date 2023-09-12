@@ -5,6 +5,7 @@ Bug fixes:
 -Fixed a bug where NPC sometimes does not get angry when they should.
 -Fixed a bug where NPC sometimes gets angry when they should not.
 -Fixed a bug where NPC sometimes stucks in the elevator.
+-Now NPCs' anger are calculated correctly when the elevator stops.
 
 
 Updates:
