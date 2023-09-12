@@ -2,31 +2,31 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    public bool isNPC;
+    private bool isNPC;
 
-    public bool cantHear;
+    private bool cantHear;
 
-    public bool cantSmell;
+    private bool cantSmell;
 
-    public int hearing;
+    private int hearing;
 
-    public int smelling;
+    private int smelling;
 
     public int startFloor;
 
-    public int floor;
+    private int floor;
 
-    public float anger;
+    private float anger;
 
-    public float angryLevel;
+    private float angryLevel;
 
-    public bool availiable;
+    private bool availiable;
 
-    public bool gotOff;
+    private bool gotOff;
 
-    public int onOrOff;
+    private int onOrOff;
 
-    public float time;
+    private float time;
 
     private AngerAmount angerAmount;
 
@@ -74,10 +74,7 @@ public class NPC : MonoBehaviour
                 onOrOff = Random.Range(0, 2);
                 if (onOrOff == 1)
                 {
-                    SelectFloor();
-                    fade.SetFadeIn();
                     gotOff = false;
-                    availiable = true;
                     hearing = Random.Range(0, 2);
                     smelling = Random.Range(0, 2);
                     if (hearing == 0)
@@ -88,11 +85,13 @@ public class NPC : MonoBehaviour
                     {
                         cantSmell = true;
                     }
+                    SelectFloor();
+                    fade.SetFadeIn();
                 }
                 time = 2;
             }
         }
-        else if (elevator.moving)
+        else if (elevator.IsMoving() && gotOff)
         {
             availiable = true;
         }
@@ -135,7 +134,18 @@ public class NPC : MonoBehaviour
             cantHear = false;
             cantSmell = false;
             gotOff = true;
+            availiable = true;
         }
+    }
+
+    public bool OnBoard()
+    {
+        return !gotOff;
+    }
+
+    public int GetFloor()
+    {
+        return floor;
     }
 
     public float GetAnger()
@@ -143,8 +153,28 @@ public class NPC : MonoBehaviour
         return anger;
     }
 
+    public void GainAnger(float amount)
+    {
+        anger += amount;
+    }
+
+    public void ReduceAnger(float amount)
+    {
+        anger -= amount;
+    }
+
     public float GetAngryLevel()
     {
         return angryLevel;
+    }
+
+    public bool CantHear()
+    {
+        return cantHear;
+    }
+
+    public bool CantSmell()
+    {
+        return cantSmell;
     }
 }

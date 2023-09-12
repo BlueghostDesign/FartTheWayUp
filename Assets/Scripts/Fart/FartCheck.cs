@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class FartCheck : MonoBehaviour
 {
-    public bool stinky;
+    private bool stinky;
 
-    public bool loud;
+    private bool loud;
 
-    public bool rainbow;
+    private bool rainbow;
 
     private bool playerHasFart;
 

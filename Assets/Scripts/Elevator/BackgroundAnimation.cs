@@ -6,7 +6,7 @@ public class Background : MonoBehaviour
 
     private Vector2 movement;
 
-    public Vector2 speed;
+    private Vector2 speed;
 
     private Elevator elevator;
 
@@ -26,7 +26,7 @@ public class Background : MonoBehaviour
 
     private void Move()
     {
-        if (elevator.moving && currentSpeed != elevator.GetSpeed())
+        if (elevator.IsMoving() && currentSpeed != elevator.GetSpeed())
         {
             speed.y = elevator.GetSpeed();
             movement += speed * Time.deltaTime;

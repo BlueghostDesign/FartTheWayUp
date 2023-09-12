@@ -15,7 +15,7 @@ public class FoodSpawner : MonoBehaviour
 
     private Vector3 spawnScale;
 
-    public int currFoodNum;
+    private int currFoodNum;
 
 
     private void Start()
@@ -85,5 +85,10 @@ public class FoodSpawner : MonoBehaviour
     public void AddFoodType(int type)
     {
         foodTypes.Add(type);
+    }
+
+    public void Ate()
+    {
+        currFoodNum -= 1;
     }
 }

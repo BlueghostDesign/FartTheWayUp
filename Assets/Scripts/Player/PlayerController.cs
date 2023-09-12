@@ -3,23 +3,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float fartAmount;
+    private float fartAmount;
 
-    public bool hasFart;
+    private bool hasFart;
 
-    public bool eating;
+    private bool eating;
 
-    public float time;
+    private float time;
 
-    public int fartType;
+    private int fartType;
 
-    public bool clearing;
+    private bool clearing;
 
-    public bool fartReseted;
+    private bool fartReseted;
 
     private IEnumerator coroutine;
 
-    public bool spacePressed;
+    private bool spacePressed;
 
     private FartCheck fartCheck;
 
@@ -237,5 +237,10 @@ public class PlayerController : MonoBehaviour
             fartCheck.ResetRainbow();
             fartReseted = true;
         }
+    }
+
+    public bool GetEating()
+    {
+        return eating;
     }
 }

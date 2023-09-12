@@ -5,10 +5,6 @@ public class NPCFloor : MonoBehaviour
 {
     public Text npcFloor;
 
-    public bool fadeIn;
-
-    public bool fadeOut;
-
     private NPC npc;
 
     private Elevator elevator;
@@ -16,17 +12,15 @@ public class NPCFloor : MonoBehaviour
 
     private void Awake()
     {
-        fadeIn = false;
-        fadeOut = false;
         npc = GetComponentInParent<NPC>();
         elevator = GameObject.Find("Elevator").transform.GetComponent<Elevator>();
     }
 
     private void Update()
     {
-        if (!npc.gotOff)
+        if (npc.OnBoard())
         {
-            npcFloor.text = npc.floor.ToString();
+            npcFloor.text = npc.GetFloor().ToString();
             if (elevator.stopped)
             {
                 npcFloor.color = new Color(npcFloor.color.r, npcFloor.color.g, npcFloor.color.b, 1);

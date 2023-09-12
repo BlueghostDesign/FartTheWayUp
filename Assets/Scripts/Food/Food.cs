@@ -33,11 +33,11 @@ public class Food : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!playerController.eating)
+        if (!playerController.GetEating())
         {
             playerAnimation.SetAnimation();
             playerController.Eat(type);
-            foodSpawner.currFoodNum -= 1;
+            foodSpawner.Ate();
             foodSpawner.AddFoodType(type);
             Destroy(gameObject);
         }

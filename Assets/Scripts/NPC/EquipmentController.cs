@@ -6,7 +6,7 @@ public class EquipmentController : MonoBehaviour
 
     private Fade fade;
 
-    public bool wearing;
+    private bool wearing;
 
 
     private void Awake()
@@ -24,19 +24,21 @@ public class EquipmentController : MonoBehaviour
 
     private void Wear()
     {
-        if (!npc.gotOff && !wearing)
+        if (!npc.OnBoard() || wearing)
         {
-            if ((npc.cantHear && npc.cantSmell) || (npc.cantHear && gameObject.CompareTag("earphone")) || (npc.cantSmell && gameObject.CompareTag("mask")))
-            {
-                fade.SetFadeIn();
-                wearing = true;
-            }
+            return;
+        }
+        if ((npc.CantHear() && npc.CantSmell()) || (npc.CantHear() && gameObject.CompareTag("earphone")) ||
+            (npc.CantSmell() && gameObject.CompareTag("mask")))
+        {
+            fade.SetFadeIn();
+            wearing = true;
         }
     }
 
     private void UnWear()
     {
-        if (npc.gotOff && wearing)
+        if (!npc.OnBoard() && wearing)
         {
             fade.SetFadeOut();
             wearing = false;

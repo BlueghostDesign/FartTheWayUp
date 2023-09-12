@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class Fade : MonoBehaviour
 {
-    public bool faded;
+    private bool fadeIn;
 
-    public bool fadeIn;
-
-    public bool fadeOut;
+    private bool fadeOut;
 
     private float fadeSpeed;
 
@@ -18,8 +16,7 @@ public class Fade : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         fadeIn = false;
         fadeOut = false;
-        fadeSpeed = 1;
-        faded = true;
+        fadeSpeed = 2;
     }
 
     private void Update()
@@ -37,7 +34,6 @@ public class Fade : MonoBehaviour
             if (npcColor.a >= 1)
             {
                 fadeIn = false;
-                faded = false;
             }
         }
         if (fadeOut)
@@ -48,7 +44,6 @@ public class Fade : MonoBehaviour
             if (npcColor.a <= 0)
             {
                 fadeOut = false;
-                faded = true;
             }
         }
     }
@@ -61,10 +56,5 @@ public class Fade : MonoBehaviour
     public void SetFadeOut()
     {
         fadeOut = true;
-    }
-
-    public bool IsFaded()
-    {
-        return faded;
     }
 }
