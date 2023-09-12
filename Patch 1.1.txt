@@ -1,0 +1,14 @@
+Fart The Way Up Patch 1.1
+
+Bug fixes:
+
+-Fixed a bug where NPC sometimes does not get angry when they should.
+-Fixed a bug where NPC sometimes gets angry when they should not.
+-Fixed a bug where NPC sometimes stucks in the elevator.
+
+
+Updates:
+
+-Lowered the difficulty for higher floors.
+-Added bars for player's fart and NPCs' anger.
+-Changed the color of NPCs' floor to make them more clear.
