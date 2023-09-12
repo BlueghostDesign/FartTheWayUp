@@ -187,23 +187,23 @@ public class PlayerController : MonoBehaviour
     {
         if (elevator.GetSpeed() == 1)
         {
-            fartAmount += 24;
+            fartAmount += 30;
         }
         else if (elevator.GetSpeed() == 2)
         {
-            fartAmount += 33;
+            fartAmount += 45;
         }
         else if (elevator.GetSpeed() == 3)
         {
-            fartAmount += 42;
+            fartAmount += 57;
         }
         else if (elevator.GetSpeed() == 4)
         {
-            fartAmount += 58.5f;
+            fartAmount += 66;
         }
         else if (elevator.GetSpeed() == 5)
         {
-            fartAmount += 84;
+            fartAmount += 72;
         }
     }
 

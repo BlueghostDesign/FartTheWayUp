@@ -79,19 +79,19 @@ public class NPCController : MonoBehaviour
         }
         else if (elevator.GetSpeed() == 2)
         {
-            npc.GainAnger((100f / 6f) / 60f);
+            npc.GainAnger((100f / 7f) / 60f);
         }
         else if (elevator.GetSpeed() == 3)
         {
-            npc.GainAnger((100f / 4f) / 60f);
+            npc.GainAnger((100f / 6f) / 60f);
         }
         else if (elevator.GetSpeed() == 4)
         {
-            npc.GainAnger((100f / 3f) / 60f);
+            npc.GainAnger((100f / 4.5f) / 60f);
         }
         else if (elevator.GetSpeed() == 5)
         {
-            npc.GainAnger((100f / 2f) / 60f);
+            npc.GainAnger((100f / 3f) / 60f);
         }
     }
 
@@ -107,15 +107,15 @@ public class NPCController : MonoBehaviour
         }
         else if (elevator.GetSpeed() == 3)
         {
-            npc.ReduceAnger((100f / 6f) / 60f);
+            npc.ReduceAnger((100f / 6.5f) / 60f);
         }
         else if (elevator.GetSpeed() == 4)
         {
-            npc.ReduceAnger((100f / 4f) / 60f);
+            npc.ReduceAnger((100f / 5f) / 60f);
         }
         else if (elevator.GetSpeed() == 5)
         {
-            npc.ReduceAnger((100f / 3f) / 60f);
+            npc.ReduceAnger((100f / 3.5f) / 60f);
         }
     }
 

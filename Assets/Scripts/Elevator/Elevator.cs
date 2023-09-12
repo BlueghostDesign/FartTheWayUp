@@ -140,17 +140,17 @@ public class Elevator : MonoBehaviour
 
     private void Speed()
     {
-        if (floor >= 2400 && speedLevel == 4)
+        if (floor >= 1000 && speedLevel == 4)
         {
             speed = 5;
             speedLevel++;
         }
-        else if (floor >= 1100 && speedLevel == 3)
+        else if (floor >= 500 && speedLevel == 3)
         {
             speed = 4;
             speedLevel++;
         }
-        else if (floor >= 500 && speedLevel == 2)
+        else if (floor >= 200 && speedLevel == 2)
         {
             speed = 3;
             speedLevel++;
