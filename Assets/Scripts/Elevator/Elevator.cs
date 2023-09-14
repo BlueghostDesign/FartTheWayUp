@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    public int floor;
+    private int floor;
 
     public List<int> stops = new();
 
-    public bool stopped;
+    private bool stopped;
 
     private bool moving;
 
@@ -170,6 +170,16 @@ public class Elevator : MonoBehaviour
     public int GetSpeedLevel()
     {
         return speedLevel;
+    }
+
+    public int GetFloor()
+    {
+        return floor;
+    }
+
+    public bool Stopped()
+    {
+        return stopped;
     }
 
     public bool IsMoving()

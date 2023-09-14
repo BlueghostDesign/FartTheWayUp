@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     {
         if (elevator != null)
         {
-            floorScore.text = elevator.floor.ToString();
+            floorScore.text = elevator.GetFloor().ToString();
         }
         CheckHighScore();
         SetHighScoreText();
@@ -78,9 +78,9 @@ public class GameManager : MonoBehaviour
 
     private void CheckHighScore()
     {
-        if (elevator.floor > PlayerPrefs.GetInt("HighScore", 0))
+        if (elevator.GetFloor() > PlayerPrefs.GetInt("HighScore", 0))
         {
-            PlayerPrefs.SetInt("HighScore", elevator.floor);
+            PlayerPrefs.SetInt("HighScore", elevator.GetFloor());
         }
     }
 

@@ -65,7 +65,7 @@ public class NPC : MonoBehaviour
 
     private void GetOn()
     {
-        if (availiable && elevator.stopped && elevator.floor >= startFloor && gotOff)
+        if (availiable && elevator.Stopped() && elevator.GetFloor() >= startFloor && gotOff)
         {
             time -= Time.deltaTime;
             if (time <= 0)
@@ -125,7 +125,7 @@ public class NPC : MonoBehaviour
 
     private void GetOff()
     {
-        if (elevator.floor == floor && isNPC && !gotOff)
+        if (elevator.GetFloor() == floor && isNPC && !gotOff)
         {
             fade.SetFadeOut();
             anger = 0;

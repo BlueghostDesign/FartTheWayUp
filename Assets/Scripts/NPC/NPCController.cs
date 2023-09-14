@@ -69,7 +69,7 @@ public class NPCController : MonoBehaviour
 
     private void GainAnger()
     {
-        if (elevator.stopped)
+        if (elevator.Stopped())
         { 
             return; 
         }

@@ -21,7 +21,7 @@ public class NPCFloor : MonoBehaviour
         if (npc.OnBoard())
         {
             npcFloor.text = npc.GetFloor().ToString();
-            if (elevator.stopped)
+            if (elevator.Stopped())
             {
                 npcFloor.color = new Color(npcFloor.color.r, npcFloor.color.g, npcFloor.color.b, 1);
             }
