@@ -7,6 +7,7 @@ public class BGM : MonoBehaviour
 
     private void Start()
     {
+        // Plays BGM at the start of the game.
         bgm = GetComponent<AudioSource>();
     }
 

@@ -33,6 +33,7 @@ public class Food : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // If the player is not eating, [Left Click] to play eating animation and delete the food from the food bar.
         if (!playerController.GetEating())
         {
             playerAnimation.SetAnimation();

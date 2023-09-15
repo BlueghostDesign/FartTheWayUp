@@ -10,13 +10,10 @@ public class Background : MonoBehaviour
 
     private Elevator elevator;
 
-    private float currentSpeed;
-
     private void Awake()
     {
         material = GetComponent<Renderer>().material;
         elevator = GetComponentInParent<Elevator>();
-        currentSpeed = 0;
     }
 
     private void Update()
@@ -26,7 +23,8 @@ public class Background : MonoBehaviour
 
     private void Move()
     {
-        if (elevator.IsMoving() && currentSpeed != elevator.GetSpeed())
+        // Play the background animation at the speed of the elevator while the elevator is moving up.
+        if (elevator.IsMoving())
         {
             speed.y = elevator.GetSpeed();
             movement += speed * Time.deltaTime;

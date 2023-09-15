@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void Fart()
     {
+        // Decrease fart amount as player farts.
         if (Input.GetKey(KeyCode.Space))
         {
             if (!spacePressed && hasFart)
@@ -94,6 +95,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Decrease player's fart amount according to elevator speed.
     private void UpdateFartAmount()
     {
         if (elevator.GetSpeed() == 1)
@@ -151,11 +153,13 @@ public class PlayerController : MonoBehaviour
         if (eating)
         {
             time -= Time.deltaTime;
+            // Gain fart amount after eating animation finish.
             if (time <= 0)
             {
                 fartReseted = false;
                 eating = false;
                 time = 3;
+                // Do not gain fart amount if player is forced to fart.
                 if (clearing)
                 {
                     return;
@@ -175,6 +179,7 @@ public class PlayerController : MonoBehaviour
                     clearing = true;
                     fartCheck.SetPlayerClearingFart();
                 }
+                // Gameover if player's fart amount is over 100.
                 if (fartAmount >= 100)
                 {
                     GameManager.GameOver();
@@ -183,6 +188,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Gain fart amount according to the elevator speed.
     public void AddFart()
     {
         if (elevator.GetSpeed() == 1)
@@ -209,6 +215,7 @@ public class PlayerController : MonoBehaviour
 
     private void ClearFart()
     {
+        // Force player to fart if player still has fart.
         if (clearing && hasFart)
         {
             if (fartType == 3)
@@ -228,6 +235,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Reset the fart attributes if the player has no more fart.
     private void ResetFart()
     {
         if (!hasFart && !fartReseted)

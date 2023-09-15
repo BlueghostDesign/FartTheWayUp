@@ -18,12 +18,16 @@ public class BarManager : MonoBehaviour
 
     private void Update()
     {
+        // Show the anger bar when the NPC gets onboard.
+        // This process only runs once everytime the NPC got onboard.
         if (npc.OnBoard() && !shown)
         {
             img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
             shown = true;
         }
-        else if(!npc.OnBoard() && shown)
+        // Hide the anger bar when the NPC gets off.
+        // This process only runs once everytime the NPC gets off.
+        else if (!npc.OnBoard() && shown)
         {
             img.color = new Color(img.color.r, img.color.g, img.color.b, 0);
             shown = false;

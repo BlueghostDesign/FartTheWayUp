@@ -65,13 +65,18 @@ public class NPC : MonoBehaviour
 
     private void GetOn()
     {
+        // NPCs are only able to get on the elevator if they are not onboard and the elevator stops.
+        // NPCs has restricted starting level. They will only get on if the elevator has reached or passed their starting level.
         if (availiable && elevator.Stopped() && elevator.GetFloor() >= startFloor && gotOff)
         {
+            // Wait until NPCs get off.
             time -= Time.deltaTime;
             if (time <= 0)
             {
                 availiable = false;
+                // NPCs get on randomly.
                 onOrOff = Random.Range(0, 2);
+                // Sets the status of NPCs if got on.
                 if (onOrOff == 1)
                 {
                     gotOff = false;
@@ -97,6 +102,7 @@ public class NPC : MonoBehaviour
         }
     }
 
+    // Randomly select which floor this NPC is getting off.
     public void SelectFloor()
     {
         floor = elevator.stops[Random.Range(0, elevator.stops.Count)];
@@ -125,6 +131,7 @@ public class NPC : MonoBehaviour
 
     private void GetOff()
     {
+        // Reset status of this NPC if got off.
         if (elevator.GetFloor() == floor && isNPC && !gotOff)
         {
             fade.SetFadeOut();

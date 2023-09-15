@@ -16,6 +16,7 @@ public class NPCFloor : MonoBehaviour
         elevator = GameObject.Find("Elevator").transform.GetComponent<Elevator>();
     }
 
+    // Show destination floor of onboard NPCs when the elevator stops.
     private void Update()
     {
         if (npc.OnBoard())

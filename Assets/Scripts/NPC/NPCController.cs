@@ -33,6 +33,7 @@ public class NPCController : MonoBehaviour
         FartClearing();
     }
 
+    // Increase the anger of effected onboard NPCs when the player farts.
     private void Angry()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -67,6 +68,7 @@ public class NPCController : MonoBehaviour
         }
     }
 
+    // Gain effected NPCs' anger according to the elevator speed.
     private void GainAnger()
     {
         if (elevator.Stopped())
@@ -95,6 +97,7 @@ public class NPCController : MonoBehaviour
         }
     }
 
+    // Gain effected NPCs' anger according to player's farting speed.
     private void ReduceAnger()
     {
         if (elevator.GetSpeed() == 1)
@@ -119,6 +122,7 @@ public class NPCController : MonoBehaviour
         }
     }
 
+    // Force player to clear farts if player ate rainbow candy or pill.
     private void FartClearing()
     {
         if (fartCheck.GetPlayerClearingFart() && npc.OnBoard() && npc.GetAnger() > 0)
@@ -141,6 +145,7 @@ public class NPCController : MonoBehaviour
 
     private void Gameover()
     {
+        // Gameover if NPC's anger is over 100.
         if (npc.GetAnger() >= 100)
         {
             GameManager.GameOver();

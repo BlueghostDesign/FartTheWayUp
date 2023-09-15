@@ -18,6 +18,8 @@ public class ElevatorStopSFX : MonoBehaviour
 
     private void Update()
     {
+        // Plays the Ding SFX to notify the player that the elevator has stopped.
+        // This process only runs once everytime the elevator stops.
         if (elevator.Stopped() && !notified)
         {
             Notify();

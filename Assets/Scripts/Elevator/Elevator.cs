@@ -34,6 +34,7 @@ public class Elevator : MonoBehaviour
         moving = false;
         cleared = false;
         stopTime = 3;
+        // Add the initial stop for the elevator at the ground floor.
         stops.Add(0);
         stopTimeCounter = stopTime;
         coroutine = WaitAndCount();
@@ -50,6 +51,8 @@ public class Elevator : MonoBehaviour
 
     private void MoveUp()
     {
+        // Moves the elevator up if the elevator is currently stopped.
+        // This process only runs once everytime the elevator stops.
         if (!stopped && !moving)
         {
             StartCoroutine(coroutine);
@@ -57,6 +60,7 @@ public class Elevator : MonoBehaviour
         }
     }
 
+    // Increase the current floor level of the elevator as the elevator moves up.
     private IEnumerator WaitAndCount()
     {
         while (true)
@@ -68,17 +72,21 @@ public class Elevator : MonoBehaviour
 
     public void AddNewStop()
     {
+        // Ensure that there are always three upcoming stops for the elevator.
         if (stops.Count < 3)
         {
             int newStop = CreateNewStop();
+            // If the new random stop is not already added, add the new stop.
             if (!stops.Contains(newStop))
             {
                 stops.Add(newStop);
+                // Sort the stops in increasing order.
                 stops.Sort();
             }
         }
     }
 
+    // Create a random stop for the elevator that associates with the speed of the elevator.
     public int CreateNewStop()
     {
         if (speedLevel == 2)
@@ -97,11 +105,14 @@ public class Elevator : MonoBehaviour
         {
             return Random.Range(stops[^1], stops[^1] + 20);
         }
+        // New random stop if the elevator speed is 1.
         return Random.Range(stops[^1], stops[^1] + 18);
     }
 
     private void ClearPassedStop()
     {
+        // When the elevator stops, remove this floor from the stops.
+        // This process only runs once everytime the elevator stops.
         if (stopped && !cleared)
         {
             stops.RemoveAt(0);
@@ -115,20 +126,24 @@ public class Elevator : MonoBehaviour
         {
             if (floor >= stops[0])
             {
+                // Wait for the NPCs to get on and get off.
                 StopCoroutine(coroutine);
                 stopped = true;
                 moving = false;
+                // Make sure the floor level is exactly the floor level of this stop when the elevator stops.
                 floor = stops[0];
                 ClearPassedStop();
             }
         }
     }
 
+    // Let the elevator stops for 3 seconds to give NPCs time to get on and get off.
     private void StopCounter()
     {
         if (stopped)
         {
             stopTimeCounter -= Time.deltaTime;
+            // Elevator starts moving after 3 seconds.
             if (stopTimeCounter <= 0 && stops.Count > 0)
             {
                 stopped = false;

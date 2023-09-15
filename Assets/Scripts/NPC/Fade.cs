@@ -26,6 +26,7 @@ public class Fade : MonoBehaviour
 
     private void InAndOut()
     {
+        // Fades in the object.
         if (fadeIn)
         {
             Color npcColor = spriteRenderer.color;
@@ -36,6 +37,7 @@ public class Fade : MonoBehaviour
                 fadeIn = false;
             }
         }
+        // Fades out the object.
         if (fadeOut)
         {
             Color npcColor = spriteRenderer.color;

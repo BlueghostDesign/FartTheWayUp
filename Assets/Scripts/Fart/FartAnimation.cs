@@ -16,8 +16,10 @@ public class FartAnimation : MonoBehaviour
 
     private void Update()
     {
+        // Disable player's fart option if the player is forced to fart.
         if (!clearing)
         {
+            // Press [Space] to play the fart animation if player has fart.
             if (Input.GetKey(KeyCode.Space) && fartCheck.PlayerHasFart())
             {
                 SetAnimation(true);
