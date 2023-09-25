@@ -28,36 +28,36 @@ The final score will be the final floor level of the elevator!
 
 Types of NPCs(other passengers):  
   
-Normal NPC: Wearing neither headphone nor mask. CAN hear loud farts and CAN smell stinky farts.  
-NPCs with headphone: CANNOT hear loud farts but CAN smell stinky farts.  
-NPCs with mask: CANNOT smell stinky farts but CAN hear loud farts.  
-NPCs with both headphone and mask: NOT affected by all types of farts.  
+- Normal NPC: Wearing neither headphone nor mask. CAN hear loud farts and CAN smell stinky farts.  
+- NPCs with headphone: CANNOT hear loud farts but CAN smell stinky farts.  
+- NPCs with mask: CANNOT smell stinky farts but CAN hear loud farts.  
+- NPCs with both headphone and mask: NOT affected by all types of farts.  
 
 
 Types of Foods:  
 
-Foods with YELLOW background will make the fart LOUD.
-Beef: Will make the fart LOUD.  
-Cauliflower: Will make the fart LOUD.  
-Cabbage: Will make the fart LOUD.  
-Cheese: Will make the fart LOUD.  
+Foods with YELLOW background will make the fart LOUD.  
+- Beef: Will make the fart LOUD.  
+- Cauliflower: Will make the fart LOUD.  
+- Cabbage: Will make the fart LOUD.  
+- Cheese: Will make the fart LOUD.  
 
-Foods with PURPLE background will make the fart STINKY.
-White Raddish: Will make the fart STINKY.  
-Drumstick: Will make the fart STINKY.  
-Onion: Will make the fart STINKY.  
-Garlic: Will make the fart STINKY.  
+Foods with PURPLE background will make the fart STINKY.  
+- White Raddish: Will make the fart STINKY.  
+- Drumstick: Will make the fart STINKY.  
+- Onion: Will make the fart STINKY.  
+- Garlic: Will make the fart STINKY.  
 
-Special foods:
-Rainbow Candy: Will change the fart to Rainbow Fart. Forces to fart until no more fart.  
-Pill: Forces to fart until no more fart.  
+Special foods:  
+- Rainbow Candy: Will change the fart to Rainbow Fart. Forces to fart until no more fart.  
+- Pill: Forces to fart until no more fart.  
 
 
 Types of Fart:  
   
-Loud fart: Affects everyone excluding those who CANNOT hear.  
-Stinky fart: Affects everyone excluding those who CANNOT smell.  
-Rainbow fart: Affects EVERYONE but REDUCES their anger.  
+- Loud fart: Affects everyone excluding those who CANNOT hear.  
+- Stinky fart: Affects everyone excluding those who CANNOT smell.  
+- Rainbow fart: Affects EVERYONE but REDUCES their anger.  
   
 NOTICE: Fart attributes will only reset if player has no more fart!
 
