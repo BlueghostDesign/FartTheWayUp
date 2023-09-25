@@ -60,3 +60,20 @@ Stinky fart: Affects everyone excluding those who CANNOT smell.
 Rainbow fart: Affects EVERYONE but REDUCES their anger.  
   
 NOTICE: Fart attributes will only reset if player has no more fart!
+
+
+Shop: You can enter shop at the Main Menu
+
+
+Gold: When a NPC get off, there's a 50% chance to gain 1 gold. You can use gold to purchase items in shop.
+
+
+Items:
+- Small Red Packets: Instantely reduce all NPCs anger by 1/3 of max anger. Cost: 25 gold.
+- Medium Red Packets: Instantely reduce all NPCs anger by 2/3 of max anger. Cost: 50 gold.
+- Large Red Packets: Instantely clear all NPCs anger. Cost: 100 gold.
+- Vacuum: Instantely clear player's fart without affecting NPCs. Cost: 100 gold.
+- Emergency Stop: Instantely stops the elevator for 5 seconds. Cost: 50 gold.
+
+
+Bag: You can open the bag In Game and choose to use items while playing.
