@@ -1,0 +1,24 @@
+Fart The Way Up Patch 2.0
+
+
+
+
+New Feature!
+
+Shop: You can enter shop at the Main Menu
+
+Gold: When a NPC get off, there's a 50% chance to gain 1 gold. You can use gold to purchase items in shop.
+
+Items:
+- Small Red Packets: Instantely reduce all NPCs anger by 1/3. Cost: 25 gold.
+- Medium Red Packets: Instantely reduce all NPCs anger by 2/3. Cost: 50 gold.
+- Large Red Packets: Instantely clear all NPCs anger. Cost: 100 gold.
+- Vacuum: Instantely clear player's fart without affecting NPCs. Cost: 100 gold.
+- Emergency Stop: Instantely stops the elevator for 5 seconds. Cost: 50 gold.
+
+Bag: You can open the bag In Game and choose to use items while playing.
+
+
+
+
+Adjusted feature: Slightly adjusted the gaining speed of fart amount after reaching level 200 to lower the difficulty of the game.
