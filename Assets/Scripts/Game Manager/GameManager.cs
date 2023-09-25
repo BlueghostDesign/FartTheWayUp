@@ -10,15 +10,21 @@ public class GameManager : MonoBehaviour
 
     public Text highScore;
 
+    public Text goldCollected;
+
     private Elevator elevator;
 
     public GameObject gameoverUI;
 
     public GameObject pauseUI;
 
+    public GameObject bagUI;
+
     private AudioSource gameoverSound;
 
     private BGM bgm;
+
+    public bool bagOpened;
 
 
     private void Awake()
@@ -30,7 +36,8 @@ public class GameManager : MonoBehaviour
         instance = this;
         elevator = GameObject.Find("Elevator").transform.GetComponent<Elevator>();
         gameoverSound = GetComponent<AudioSource>();
-        bgm = GameObject.Find("BGM").transform.GetComponent<BGM>();;
+        bgm = GameObject.Find("BGM").transform.GetComponent<BGM>();
+        bagOpened = false;
     }
 
     private void Update()
@@ -40,16 +47,17 @@ public class GameManager : MonoBehaviour
             // Updates the floor level shown on the screen.
             floorScore.text = elevator.GetFloor().ToString();
         }
-        CheckHighScore();
+        UpdateHighScore();
         SetHighScoreText();
+        UpdateGoldText();
     }
 
     public void RestartGame()
     {
-        // Reload the In-Game scene.
-        SceneManager.LoadScene(1);
         // Start running the game.
         Time.timeScale = 1;
+        // Reload the In-Game scene.
+        SceneManager.LoadScene(1);
     }
 
     public void Quit()
@@ -75,6 +83,22 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void Bag()
+    {
+        if (bagOpened)
+        {
+            // Close the bag UI if opened already.
+            instance.bagUI.SetActive(false);
+            bagOpened = false;
+        }
+        else
+        {
+            // Open the bag UI.
+            instance.bagUI.SetActive(true);
+            bagOpened = true;
+        }
+    }
+
     public static void GameOver()
     {
         instance.bgm.StopBGM();
@@ -86,7 +110,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    private void CheckHighScore()
+    private void UpdateHighScore()
     {
         // Updates the highscore.
         if (elevator.GetFloor() > PlayerPrefs.GetInt("HighScore", 0))
@@ -99,5 +123,10 @@ public class GameManager : MonoBehaviour
     {
         // Show highscore on screen.
         highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+    }
+
+    private void UpdateGoldText()
+    {
+        goldCollected.text = $"Gold Collected: {elevator.GetGoldCollected()}";
     }
 }

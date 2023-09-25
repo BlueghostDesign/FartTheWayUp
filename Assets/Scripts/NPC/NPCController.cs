@@ -15,6 +15,10 @@ public class NPCController : MonoBehaviour
 
     private Elevator elevator;
 
+    public float c;
+
+    public float c2;
+
 
     private void Awake()
     {
@@ -23,14 +27,17 @@ public class NPCController : MonoBehaviour
         npc = GetComponent<NPC>();
         fartCheck = GetComponentInParent<FartCheck>();
         elevator = GetComponentInParent<Elevator>();
+        c = 0;
+        c2 = 0;
     }
 
     private void Update()
     {
         Gameover();
         Angry();
-        SetAnimation();
         FartClearing();
+        ItemUsed();
+        SetAnimation();
     }
 
     // Increase the anger of effected onboard NPCs when the player farts.
@@ -135,6 +142,29 @@ public class NPCController : MonoBehaviour
             {
                 GainAnger();
             }
+        }
+    }
+
+    private void ItemUsed()
+    {
+        if (!npc.OnBoard())
+        {
+            return;
+        }
+        int item = elevator.GetItemUsed();
+        // Instant reduce of anger according to the used item.
+        if (item == 1 || item == 2 || item == 3)
+        {
+            if (npc.GetAnger() >= ((float)item / 3f) * 100f)
+            {
+                npc.ReduceAnger(((float)item / 3f) * 100f);
+            }
+            else
+            {
+                npc.ReduceAnger(npc.GetAnger());
+            }
+            // This NPC is effected by the item.
+            elevator.PassengerEffected();
         }
     }
 

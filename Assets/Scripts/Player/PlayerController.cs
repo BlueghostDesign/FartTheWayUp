@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     private Elevator elevator;
 
+    public int c;
+
 
     private void Awake()
     {
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
         time = 3;
         clearing = false;
         fartReseted = false;
+        c = 0;
     }
 
 
@@ -55,6 +58,7 @@ public class PlayerController : MonoBehaviour
         ResetFart();
         IsEating();
         ClearFart();
+        ItemUsed();
         fartCheck.SetPlayerHasFart(hasFart);
     }
 
@@ -197,19 +201,19 @@ public class PlayerController : MonoBehaviour
         }
         else if (elevator.GetSpeed() == 2)
         {
-            fartAmount += 45;
+            fartAmount += 35;
         }
         else if (elevator.GetSpeed() == 3)
         {
-            fartAmount += 57;
+            fartAmount += 45;
         }
         else if (elevator.GetSpeed() == 4)
         {
-            fartAmount += 66;
+            fartAmount += 55;
         }
         else if (elevator.GetSpeed() == 5)
         {
-            fartAmount += 72;
+            fartAmount += 60;
         }
     }
 
@@ -250,5 +254,17 @@ public class PlayerController : MonoBehaviour
     public bool GetEating()
     {
         return eating;
+    }
+
+    public void ItemUsed()
+    {
+        // Instant reduce of fart according to the item used.
+        if (elevator.GetItemUsed() == 4)
+        {
+            c = elevator.GetItemUsed();
+            fartAmount = 0;
+            // Reset item used.
+            elevator.UseItem(0);
+        }
     }
 }

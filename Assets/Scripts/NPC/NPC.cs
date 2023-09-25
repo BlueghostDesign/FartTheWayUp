@@ -1,3 +1,4 @@
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -14,9 +15,9 @@ public class NPC : MonoBehaviour
 
     public int startFloor;
 
-    private int floor;
+    public int floor;
 
-    private float anger;
+    public float anger;
 
     private float angryLevel;
 
@@ -25,6 +26,8 @@ public class NPC : MonoBehaviour
     private bool gotOff;
 
     private int onOrOff;
+
+    private int goldOrNot;
 
     private float time;
 
@@ -79,6 +82,7 @@ public class NPC : MonoBehaviour
                 // Sets the status of NPCs if got on.
                 if (onOrOff == 1)
                 {
+                    elevator.PassengerOn();
                     gotOff = false;
                     hearing = Random.Range(0, 2);
                     smelling = Random.Range(0, 2);
@@ -134,6 +138,15 @@ public class NPC : MonoBehaviour
         // Reset status of this NPC if got off.
         if (elevator.GetFloor() == floor && isNPC && !gotOff)
         {
+            // 50% chance to gain 1 gold when the NPC get off.
+            goldOrNot = Random.Range(0, 2);
+            if (goldOrNot == 1)
+            {
+                int gold = PlayerPrefs.GetInt("Player Gold", 0);
+                PlayerPrefs.SetInt("Player Gold", gold + 1);
+                elevator.GoldCollected();
+            }
+            elevator.PassengerOff();
             fade.SetFadeOut();
             anger = 0;
             angryLevel = 0;

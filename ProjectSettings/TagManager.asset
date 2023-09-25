@@ -8,6 +8,11 @@ TagManager:
   - mask
   - earphone
   - foodcube
+  - Small Red Packet
+  - Medium Red Packet
+  - Large Red Packet
+  - Vacuum
+  - Emergency Stop
   layers:
   - Default
   - TransparentFX

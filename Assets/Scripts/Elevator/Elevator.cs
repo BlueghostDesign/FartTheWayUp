@@ -24,12 +24,24 @@ public class Elevator : MonoBehaviour
 
     private int speedLevel;
 
+    private int goldCollected;
+
+    private int itemNumber;
+
+    public int passengers;
+
+    public int effectedPassengers;
+
 
     private void Awake()
     {
         floor = 0;
         speed = 1;
         speedLevel = 1;
+        goldCollected = 0;
+        itemNumber = 0;
+        passengers = 0;
+        effectedPassengers = 0;
         stopped = true;
         moving = false;
         cleared = false;
@@ -43,6 +55,8 @@ public class Elevator : MonoBehaviour
     private void Update()
     {
         AddNewStop();
+        AllEffected();
+        ItemUsed();
         Speed();
         MoveUp();
         Arrive();
@@ -177,6 +191,46 @@ public class Elevator : MonoBehaviour
         }
     }
 
+    // Reset item used if all NPCs are effected.
+    private void AllEffected()
+    {
+        if (effectedPassengers >= passengers)
+        {
+            UseItem(0);
+            effectedPassengers = 0;
+        }
+    }
+
+    private void ItemUsed()
+    {
+        // Instant stop of the elevator according to the item used.
+        if (itemNumber == 5)
+        {
+            StopCoroutine(coroutine);
+            stopped = true;
+            moving = false;
+            // Stop for 5 seconds.
+            stopTimeCounter = 5;
+            // Reset item used.
+            UseItem(0);
+        }
+    }
+
+    public void PassengerOn()
+    {
+        passengers++;
+    }
+
+    public void PassengerOff()
+    {
+        passengers--;
+    }
+
+    public void PassengerEffected()
+    {
+        effectedPassengers++;
+    }
+
     public float GetSpeed()
     {
         return speed;
@@ -200,5 +254,25 @@ public class Elevator : MonoBehaviour
     public bool IsMoving()
     {
         return moving;
+    }
+
+    public void GoldCollected()
+    {
+        goldCollected++;
+    }
+
+    public int GetGoldCollected()
+    {
+        return goldCollected;
+    }
+
+    public void UseItem(int item)
+    {
+        itemNumber = item;
+    }
+
+    public int GetItemUsed()
+    {
+        return itemNumber;
     }
 }
